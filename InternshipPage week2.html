@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment2 week2 VaultofCodes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      position: relative;
+      background: #0f0f10;
+      color: #fff;
+      min-height: 100vh;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(108,99,255,0.15), transparent 50%),
+                  radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05), transparent 50%);
+      animation: rotate 30s linear infinite;
+    }
+
+    body::after {
+      background: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M20 0v100M80 0v100M0 20h100M0 80h100" stroke="%2333ffee" stroke-width="0.3"/></svg>');
+      opacity: 0.05;
+      background-repeat: repeat;
+      background-size: 100px 100px;
+      animation: staticBg 60s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes staticBg {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .container h1 {
+      font-size: 36px;
+      color: #ffffff;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      position: relative;
+      background: rgba(255,255,255,0.07);
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid rgba(108,99,255,0.4);
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(108, 99, 255, 0.1);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 90deg, #6c63ff, #33ffee, #6c63ff);
+      animation: rotate 5s linear infinite;
+      z-index: 0;
+      opacity: 0.05;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px rgba(108, 99, 255, 0.4);
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-icon {
+      display: inline-block;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.15);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      color: #ffffff;
+      margin: 10px 0;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #ccc;
+      margin-bottom: 20px;
+      min-height: 60px;
+    }
+
+    .card button {
+      padding: 10px 20px;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #33ffee;
+      color: #000;
+    }
+
+    .icon {
+      width: 36px;
+      height: 36px;
+      fill: #33ffee;
+      margin-bottom: 15px;
+      transition: fill 0.3s ease;
+    }
+
+    .card:hover .icon {
+      fill: #6c63ff;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Explore Our Internship Programs</h1>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-content">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M4 5h16v10H4V5zm-2 12h20v2H2v-2z"/>
+            </svg>
+          </div>
+          <h2>Web Development</h2>
+          <p>Build modern websites using HTML, CSS, JavaScript, and React with real-world projects.</p>
+          <a href="https://xnigwq.on-app.in/app/oc/506813/xnigwq?utm_source=copy-link&utm_medium=student-course-referral&utm_campaign=course-overview" target="_blank"><button>Apply Now</button></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M7 2c-1.1 0-2 .9-2 2v16a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2H7zm5 19a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/>
+            </svg>
+          </div>
+          <h2>App Development</h2>
+          <p>Create mobile apps using Flutter or native Android. Perfect for mobile-first learners.</p>
+          <a href="https://xnigwq.on-app.in/app/oc/649395/xnigwq?utm_source=copy-link&utm_medium=student-course-referral&utm_campaign=course-overview" target="_blank"><button>Apply Now</button></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M12 2c-1.66 0-3 1.34-3 3v1h6v2H7c-1.1 0-2 .9-2 2v3h14v-2h-8v-2h6c1.1 0 2-.9 2-2V5c0-1.66-1.34-3-3-3h-4zm-4 14c-1.1 0-2 .9-2 2v3c0 1.66 1.34 3 3 3h4c1.66 0 3-1.34 3-3v-1h-6v-2h8c1.1 0 2-.9 2-2v-3H8z"/>
+            </svg>
+          </div>
+          <h2>Python Programming</h2>
+          <p>Master Python with hands-on coding, from basics to data projects and automation.</p>
+          <a href="https://xnigwq.on-app.in/app/oc/506722/xnigwq?utm_source=copy-link&utm_medium=student-course-referral&utm_campaign=course-overview" target="_blank"><button>Apply Now</button></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <div class="card-icon">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M9 2v2h6V2H9zm10 4H5v2h14V6zm0 4H5v2h14v-2zm-2 4H7v2h10v-2zm-2 4H9v2h6v-2z"/>
+            </svg>
+          </div>
+          <h2>Java Programming</h2>
+          <p>Explore OOP and backend logic using Java and build scalable programs and systems.</p>
+          <a href="https://xnigwq.on-app.in/app/oc/506804/xnigwq?utm_source=copy-link&utm_medium=student-course-referral&utm_campaign=course-overview" target="_blank"><button>Apply Now</button></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
